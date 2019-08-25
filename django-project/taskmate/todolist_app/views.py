@@ -41,6 +41,12 @@ def about(request):
     #return HttpResponse("Welcome to todolist")
     return render(request, 'about.html', context)
 
+def index(request):
+    context = {
+        'index_text': "Welcome To Index Page",
+    }
+    return render(request, 'index.html', context)
+
 def delete_task(request, task_id):
     task = TaskList.objects.get(pk=task_id)
     task.delete()
